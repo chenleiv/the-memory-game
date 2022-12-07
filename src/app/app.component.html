@@ -1,0 +1,12 @@
+<div class="app-container">
+  <app-header></app-header>
+  <card-data
+    #childComponent
+    [changing]="changingValue"
+    [user_id]="user_id"
+    [images]="images"
+    [numOfCards]="numOfCards"
+    (startOver)="startOver($event)"
+  >
+  </card-data>
+</div>

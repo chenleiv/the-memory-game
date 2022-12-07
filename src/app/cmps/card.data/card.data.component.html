@@ -1,0 +1,44 @@
+<div>
+  <section
+    class="modal"
+    *ngIf="this.isNewGame || this.isUserWin || !this.timeDiff"
+  >
+    <div class="modal-content">
+      <h1>
+        {{
+          (isNewGame && "let's start") ||
+            (isUserWin && "You Win") ||
+            (!this.timeDiff && "Sorry, time's up")
+        }}
+      </h1>
+
+      <div class="sub-container">
+        <h4>Choose difficulty</h4>
+        <div class="btn-container">
+          <button class="button" (click)="startOver.emit(4)">4</button>
+          <button class="button" (click)="startOver.emit(6)">6</button>
+          <button class="button" (click)="startOver.emit(8)">8</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub-header">
+    <div class="timer">
+      Countdown: {{ timeDiff | date : "mm" }} :
+      <span [class.red]="isRed">{{ timeDiff | date : "ss" }}</span>
+    </div>
+  </section>
+
+  <section class="img-container">
+    <img
+      *ngFor="let img of images"
+      (click)="selectedCard(img)"
+      src="{{
+        img.isSelected || img.isMatched
+          ? img.image
+          : './assets/img/walmart-logo3.png'
+      }}"
+    />
+  </section>
+</div>

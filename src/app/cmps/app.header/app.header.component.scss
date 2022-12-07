@@ -1,0 +1,32 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 55px;
+  padding: 0 20px 20px;
+
+  .logo {
+    align-self: center;
+
+    img {
+      width: 120px;
+      height: 70px;
+    }
+  }
+
+  h3 {
+    color: #136698;
+    align-self: center;
+    margin: 0;
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 0 10px 20px;
+
+    h3 {
+      font-size: 18px;
+    }
+  }
+}
