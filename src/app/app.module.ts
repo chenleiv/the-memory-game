@@ -5,10 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './cmps/app.header/app.header.component';
 import { CardDataComponent } from './cmps/card.data/card.data.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, CardDataComponent, AppHeaderComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CommonModule],
   providers: [],
   bootstrap: [AppComponent],
 })

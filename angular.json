@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "the-memory-game:build:production"
+              "buildTarget": "the-memory-game:build:production"
             },
             "development": {
-              "browserTarget": "the-memory-game:build:development"
+              "buildTarget": "the-memory-game:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "the-memory-game:build"
+            "buildTarget": "the-memory-game:build"
           }
         },
         "test": {
