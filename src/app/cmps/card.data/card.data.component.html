@@ -30,15 +30,12 @@
     </div>
   </section>
 
-  <section class="img-container">
-    <img
-      *ngFor="let img of images"
-      (click)="selectedCard(img)"
-      src="{{
-        img.isSelected || img.isMatched
-          ? img.image
-          : './assets/img/walmart-logo3.png'
-      }}"
-    />
+  <section class="cards-container" [ngClass]="{'four-cards': images.length === 4, 'eight-cards': images.length === 8}">
+    <ng-container *ngFor="let img of images">
+      <img
+        (click)="selectedCard(img)"
+        [src]="img.isSelected || img.isMatched ? img.image : './assets/img/walmart-logo3.png'"
+      />
+    </ng-container>
   </section>
 </div>
