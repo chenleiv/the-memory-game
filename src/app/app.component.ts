@@ -3,11 +3,16 @@ import { Subject } from 'rxjs';
 import { CardDataComponent } from './cmps/card.data/card.data.component';
 import { Images } from './models/card.model';
 import { CardService } from './service/card.service';
+import { CommonModule } from '@angular/common';
+import { AppHeaderComponent } from './cmps/app.header/app.header.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [CommonModule, RouterModule, CardDataComponent, AppHeaderComponent]
 })
 export class AppComponent implements OnInit {
   changingValue: Subject<boolean> = new Subject();

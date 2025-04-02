@@ -1,14 +1,19 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Images } from 'src/app/models/card.model';
 import { CardService } from 'src/app/service/card.service';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'card-data',
   templateUrl: './card.data.component.html',
   styleUrls: ['./card.data.component.scss'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class CardDataComponent {
+  Math = Math;
   @Input() changing: Subject<boolean>;
   @Input() user_id: number;
   @Input() images: Images[];

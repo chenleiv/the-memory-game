@@ -31,7 +31,7 @@
   </section>
 
   <section class="cards-container" [ngClass]="{'four-cards': images.length === 4, 'eight-cards': images.length === 8}">
-    <ng-container *ngFor="let img of images">
+    <ng-container *ngFor="let img of images"> 
       <img
         (click)="selectedCard(img)"
         [src]="img.isSelected || img.isMatched ? img.image : './assets/img/water-color.png'"
